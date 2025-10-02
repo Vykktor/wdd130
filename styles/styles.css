@@ -1,48 +1,86 @@
+/* Universal Selector Rule */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* REQUIRED: Ensures border/padding are included in width/height */
+}
+
+/* Base Selectors */
 nav {
     background-color: darkblue;
     padding: 10px;
 }
+
 nav a {
     color: white;
-    display: block;
-    padding: 20px;
+    /* Removed display: block; and changed padding to allow links to sit next to each other */
+    padding: 10px; 
 }
+
 h1 {
     color: steelblue;
 }
+
+/* This targets ALL images. The styles below it will override these for specific images. */
 img {
-    width: 100%;
-    height: auto;
+    /* Removed height: auto; as it's redundant when width is set to 100% or a fixed value */
+    max-width: 100%;
     border: 1px solid black;
     padding: 2px;
-    box-sizing: 0 0 30px gray;
 }
+
 p {
     padding: 10px;
 }
+
 aside {
     width: 20em;
-    margin: 1em;
-    border: 1px solid rgba(0, 0, 0 0.2);
-    padding: 1em;
-    background-color: #eee;
-    color: #333;
+    /* REMOVED: margin, border, padding, background-color, color (moved to .box) */
     text-align: center;
+    
+    /* REQUIRED for the absolute positioning of h2 */
+    position: relative; 
 }
-aside img {
-    width: 200px;
-    height: auto;
-}
+
+/* CSS rule to float the profile image */
 main img {
     width: 150px;
     height: auto;
+    float: right;
+    margin: 1rem; /* Added margin for space around the floating image */
 }
+
+/* Absolute positioning for the aside heading */
+aside h2 {
+    position: absolute;
+    top: 47px; /* Example value - adjust as needed */
+    left: 150px; /* Example value - adjust as needed */
+    color: white; /* Make text visible over the image */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+    padding: 0.5rem;
+}
+
+aside img {
+    /* This overrides the general img width: 100% for the aside image */
+    width: 200px;
+    height: auto;
+}
+
 footer {
     text-align: center;
     background-color: darkblue;
     color: white;
     padding: 10px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+}
+
+/* Class Selectors */
+/* REQUIRED: Add the class selector section header */
+
+/* REQUIRED: The box class that is applied to aside and ul */
+.box {
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.2); /* Corrected RGBA syntax */
+    background-color: #eee;
+    color: #333;
 }

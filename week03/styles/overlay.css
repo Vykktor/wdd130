@@ -1,3 +1,18 @@
+:root {
+    /* Colors and Shadows */
+    --color-dark: #000;
+    --shadow-light: #777;
+    --shadow-dark: #111;
+    --color-navy: navy;
+    --color-steel: #555; /* Used for H2 border */
+
+    /* Spacing and Sizing */
+    --spacing-base: 1rem;
+    --spacing-large: 25px;
+    --border-size: 1px;
+    --max-width: 800px;
+}
+
 * {
   margin: 0;
   padding: 0;

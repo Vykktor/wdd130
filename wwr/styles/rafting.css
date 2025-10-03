@@ -1,0 +1,135 @@
+/* REQUIRED: Define CSS Variables in :root */
+:root {
+    /* Color Scheme (Choose your own, ensuring good contrast) */
+    --primary-color: #0d47a1; /* Deep Blue - for headings, main accents */
+    --secondary-color: #2e7d32; /* Dark Green - for background, secondary accents */
+    --accent1-color: #ffffff; /* White - for light text */
+    --accent2-color: #ffb300; /* Amber - for navigation links, buttons */
+
+    /* Font Variables (Choose your own) */
+    --heading-font: 'Rock Salt', cursive; /* Example: A bold, stylized font */
+    --body-font: 'Roboto', Helvetica, sans-serif; /* Example: A clean, readable font */
+}
+
+/* REQUIRED: CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* REQUIRED: Body Styling */
+body {
+    font-family: var(--body-font);
+    /* Using accent1-color here for body text is uncommon; I'll use a darker color for readability. 
+       If your instruction specifies a variable, use it. I'll use var(--primary-color) for contrast. */
+    color: var(--primary-color);
+}
+
+/* REQUIRED: Limit and Center Page Width */
+header, main, footer {
+    width: 840px; /* Limit the width */
+    margin: 0 auto; /* Center the content */
+}
+
+/* REQUIRED: Heading Styling */
+h1, h2 {
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+}
+
+/* REQUIRED: Nav, P, Section, Article consistent spacing */
+nav, p, section, article {
+    margin: 16px;
+    padding: 8px;
+}
+
+/* -------------------- Custom Styles -------------------- */
+
+/* Navigation Bar Styling */
+header {
+    display: flex; /* Helps align logo and nav */
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--primary-color);
+}
+
+header img {
+    width: 150px; /* Size the logo */
+}
+
+nav a {
+    color: var(--primary-color);
+    text-decoration: none;
+    padding: 10px;
+    font-weight: bold;
+}
+
+/* REQUIRED: Remove underlines from social media links */
+.socialmedia a {
+    text-decoration: none;
+}
+
+/* -------------------- Hero Overlay Styles -------------------- */
+
+/* REQUIRED: Style the div with relative position */
+.hero {
+    position: relative; /* REQUIRED: Sets positioning context for children */
+}
+
+/* REQUIRED: Style the image to fill the div */
+.hero img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* REQUIRED: Style H1 for absolute positioning overlay */
+.hero h1 {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    padding: 16px;
+    text-align: center;
+    opacity: 0.7;
+    background-color: var(--primary-color); /* Using primary color for background */
+    color: var(--accent1-color); /* White text color */
+    font-size: 2.5rem;
+}
+
+/* REQUIRED: Style the article for absolute positioning overlay */
+.hero article {
+    position: absolute;
+    top: 150px; /* Adjust this to place it below the H1 */
+    right: 50px; /* Place it on the right side */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent white background */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+}
+
+/* REQUIRED: Style the image inside the article */
+.hero article img {
+    float: right;
+    width: 125px; /* Specific width */
+    margin-left: 15px;
+    border-radius: 50%; /* Makes it round for a nice effect */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Footer Styling */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--secondary-color);
+    color: var(--accent1-color);
+    padding: 20px;
+}
+
+.socialmedia img {
+    width: 40px; /* Size the social icons */
+    margin: 0 5px;
+}

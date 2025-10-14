@@ -203,3 +203,168 @@ footer p {
 .socialmedia img {
     width: 40px; 
 }
+
+/* -------------------- W05 Contact Page Layouts -------------------- */
+
+/* Overall Company Info Section (Text + Map) */
+.company-info-grid {
+    display: grid;
+    /* Two columns: one for info, one for the map */
+    grid-template-columns: 1fr 1.5fr; 
+    gap: 30px;
+    padding: 30px 16px;
+    align-items: start; /* Align content to the top */
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+.company-info-grid h2 {
+    /* Make the main H2 span across both columns */
+    grid-column: 1 / 3; 
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.info-details h3, .map-container h3 {
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+.info-details p {
+    margin: 8px 0;
+    padding: 0; /* Override general padding */
+}
+
+/* REQUIRED: Google Map Styling */
+.map-container iframe {
+    width: 100%; /* Make it fill its grid column */
+    height: 300px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+/* Employee Profiles Section */
+.employee-profiles {
+    padding: 30px 16px;
+    text-align: center;
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+.profile-cards {
+    display: flex;
+    justify-content: space-around; /* Distributes space evenly */
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.profile-cards figure {
+    flex: 1 1 250px; /* Allows flexibility but prevents shrinking too much */
+    max-width: 30%;
+    text-align: center;
+}
+
+.profile-cards img {
+    width: 100%;
+    height: auto;
+    /* Circular profile images are a common design choice */
+    border-radius: 50%; 
+    object-fit: cover;
+    aspect-ratio: 1 / 1; /* Ensures the image is a perfect circle */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.profile-cards figcaption {
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-top: 10px;
+}
+
+/* Contact Form Section (Single-Column, Uniform Layout) */
+.contact-form {
+    padding: 30px 16px;
+}
+
+.contact-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact-form form {
+    /* Set the form to a maximum width and center it for a cleaner look */
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.contact-form label {
+    display: block; /* Ensures label takes its own line */
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%; /* REQUIRED: Uniform, single-column width */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Include padding in total width */
+    font-size: 1em;
+}
+
+.contact-form textarea {
+    resize: vertical; /* Allow resizing only vertically */
+}
+
+/* Radio Button Group Styling */
+.radio-group {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.radio-group legend {
+    font-weight: bold;
+    padding: 0 5px;
+    color: var(--primary-color);
+}
+
+.radio-group input[type="radio"], .checkbox-item input[type="checkbox"] {
+    /* Style the actual input element */
+    margin-right: 8px;
+}
+
+.radio-group label, .checkbox-item label {
+    /* Make the radio/checkbox labels inline with the input */
+    display: inline;
+    font-weight: normal;
+    margin: 0;
+}
+
+.checkbox-item {
+    margin-top: 20px;
+}
+
+/* REQUIRED: Submission Button Styling */
+.contact-form button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: var(--primary-color);
+    color: var(--accent1-color);
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button[type="submit"]:hover {
+    background-color: var(--secondary-color);
+}

@@ -159,6 +159,7 @@ nav a {
     color: var(--accent1-color); font-size: 2.5rem;
 }
 
+
 .hero article {
     position: absolute; top: 150px; right: 50px; padding: 20px;
     background-color: rgba(255, 255, 255, 0.85); 
@@ -367,4 +368,320 @@ footer p {
 
 .contact-form button[type="submit"]:hover {
     background-color: var(--secondary-color);
+}
+
+/* --- Home Page Specific Styles --- */
+
+/* Hero Container */
+.hero {
+    position: relative;
+    max-width: 100%; /* Ensures it expands to full page width */
+    height: 500px; /* Define a height for the image container */
+    overflow: hidden;
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image covers the area without distortion */
+}
+
+/* Hero Text Overlay */
+.hero-content { /* ⬅️ CHANGED HERE */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Use Flexbox to center the content */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Ensures vertical centering */
+    align-items: center; /* Ensures horizontal centering */
+    text-align: center;
+    /* Updated opacity for better contrast */
+    background-color: rgba(0, 0, 0, 0.55); 
+    color: white;
+    padding: 20px;
+}
+
+.hero-content h1 { /* ⬅️ CHANGED HERE */
+    font-size: 3.5rem;
+    color: white; 
+    margin-bottom: 20px;
+} 
+
+/* Call to Action Button */
+.call-to-action {
+    display: inline-block;
+    background-color: var(--accent2-color); /* Amber */
+    color: var(--primary-color); /* Deep Blue */
+    text-decoration: none;
+    font-size: 1.5rem;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.call-to-action:hover {
+    background-color: #ffc107; /* Lighter Amber */
+}
+
+/* Home Page Grid Content Layout (Criterion 11) */
+.home-grid-content {
+    display: grid;
+    /* Defines a 4-column layout */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px;
+    padding: 40px 16px;
+    background-color: var(--primary-color); /* Use a contrast background */
+    color: var(--accent1-color); /* White text */
+}
+
+.home-grid-content h2 {
+    grid-column: 1 / 5; /* Span the main heading across all 4 columns */
+    text-align: center;
+    color: var(--accent2-color); /* Amber heading */
+    margin-bottom: 10px;
+}
+
+/* 1. Image and Text Pair 1 */
+.grid-img-1 {
+    grid-column: 1 / 3; /* Image spans the first two columns (50%) */
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.grid-text-1 {
+    grid-column: 3 / 5; /* Text spans the last two columns (50%) */
+    padding: 10px 20px;
+}
+
+/* 2. Image and Text Pair 2 (Flipped Layout for Visual Appeal) */
+.grid-img-2 {
+    grid-column: 3 / 5; /* Image spans the last two columns */
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    /* Push the image below the first text block */
+    grid-row: 3; 
+}
+
+.grid-text-2 {
+    grid-column: 1 / 3; /* Text spans the first two columns */
+    padding: 10px 20px;
+    /* Push the text below the first image block */
+    grid-row: 3; 
+}
+
+/* Reset H3 color for contrast */
+.home-grid-content h3 {
+    color: var(--accent2-color); 
+    margin-bottom: 10px;
+}
+
+.home-grid-content p {
+    margin: 0;
+}
+
+/* --- Home Page Specific Styles (Newsletter) --- */
+.newsletter-signup {
+    padding: 40px 16px;
+    max-width: 840px; /* Match the main container width */
+    margin: 0 auto;
+    text-align: center;
+}
+
+.newsletter-form {
+    display: grid;
+    /* Two columns: label (1 part), input (3 parts) */
+    grid-template-columns: 1fr 3fr; 
+    gap: 15px 20px;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    background-color: var(--accent1-color);
+}
+
+.newsletter-form label {
+    text-align: right;
+    align-self: center; /* Center label vertically */
+    padding-right: 10px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.newsletter-form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.newsletter-form button {
+    /* Make the button span both columns */
+    grid-column: 1 / 3; 
+    width: 100%;
+    padding: 12px;
+    margin: 0;
+    /* Use strong contrasting colors for the CTA button */
+    background-color: var(--secondary-color); 
+    color: var(--accent1-color);
+    font-size: 1.1em;
+}
+
+/* -------------------- Trips Page Layouts -------------------- */
+
+/* Table Summary Styling (Criterion 16) */
+.trip-summary-table {
+    max-width: 840px;
+    margin: 30px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.trip-summary-table h2 {
+    margin-bottom: 20px;
+}
+
+.trip-summary-table table {
+    width: 100%;
+    border-collapse: collapse; /* Removes double borders */
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.trip-summary-table th, .trip-summary-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.trip-summary-table thead th {
+    background-color: var(--primary-color);
+    color: var(--accent1-color);
+    font-weight: bold;
+    text-align: center;
+}
+
+.trip-summary-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2; /* Zebra striping for readability */
+}
+/* --- Trips Page Specific Hero Styling --- */
+
+/* 1. Basic container styling to ensure width and vertical space */
+.trips-hero {
+    /* Set a width matching the main content area */
+    max-width: 840px; 
+    margin: 30px auto 40px; /* Centers horizontally and adds vertical space */
+    text-align: center; /* This centers any inline/text content like the H1 */
+}
+
+/* 2. Style the main heading */
+.trips-hero h1 {
+    font-size: 2.8rem;
+    color: var(--primary-color);
+    /* Add a clean, subtle line underneath for visual separation */
+    border-bottom: 3px solid var(--accent2-color); 
+    display: inline-block; /* Allows the border to fit the text content */
+    padding-bottom: 5px;
+}
+
+/* Trip Details Grid (Criterion 15 & 17) */
+.trip-details-grid {
+    /* Use Grid to organize trip cards and the final CTA */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three equal columns for trip cards */
+    gap: 30px;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px 50px;
+    text-align: center;
+}
+
+.trip-details-grid h2 {
+    grid-column: 1 / 4; /* Main heading spans all columns */
+    margin-bottom: 30px;
+}
+
+/* Individual Trip Card Styling */
+.trip-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    overflow: hidden; /* Contains the border-radius for the image */
+    background-color: var(--accent1-color);
+    padding-bottom: 20px;
+}
+
+.trip-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.trip-card h3 {
+    color: var(--secondary-color);
+    margin: 10px 0 5px;
+}
+
+.trip-card p {
+    padding: 0 15px;
+    margin: 5px 0;
+}
+
+.trip-stats {
+    font-style: italic;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* Trips Page Call to Action (Criterion 14) */
+.book-now-cta {
+    /* Span the CTA button across the entire bottom of the grid */
+    grid-column: 1 / 4; 
+    display: block;
+    width: 50%;
+    margin: 30px auto 0;
+    
+    /* Strong visual styling */
+    background-color: var(--accent2-color);
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 1.5rem;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.book-now-cta:hover {
+    background-color: #ffc107;
+}
+
+/* --- RESPONSIVENESS UPDATE (Mobile stack for trips page) --- */
+@media screen and (max-width: 600px) {
+    /* ... existing mobile rules ... */
+
+    /* Trips Page Stack */
+    .trip-details-grid {
+        grid-template-columns: 1fr; /* Stack trip cards vertically */
+    }
+
+    .trip-details-grid h2 {
+        grid-column: 1 / 2;
+    }
+
+    .book-now-cta {
+        grid-column: 1 / 2;
+        width: 90%;
+    }
 }
